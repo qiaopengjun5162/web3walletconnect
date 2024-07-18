@@ -1,7 +1,13 @@
+import BlockListener from "@/components/BlockListener"
+import USDTTransferTracker from "@/components/USDTTransferTracker"
 
 const App = () => {
+
     return (
-        <div>App</div>
+        <div>
+            <BlockListener />
+            <USDTTransferTracker />
+        </div>
     )
 }
 

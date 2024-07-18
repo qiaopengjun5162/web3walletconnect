@@ -1,7 +1,7 @@
 'use client'
 
-import React, { ReactNode } from 'react'
 import { config, projectId } from '@/config'
+import { ReactNode } from 'react'
 
 import { createWeb3Modal } from '@web3modal/wagmi/react'
 
@@ -19,7 +19,14 @@ createWeb3Modal({
     wagmiConfig: config,
     projectId,
     enableAnalytics: true, // Optional - defaults to your Cloud configuration
-    enableOnramp: true // Optional - false as default
+    enableOnramp: true, // Optional - false as default
+    themeVariables: {
+        '--w3m-color-mix': '#0d0d0d',
+        '--w3m-color-mix-strength': 40,
+        '--w3m-font-family': 'Helvetica',
+        '--w3m-font-size-master': '16px',
+        '--w3m-border-radius-master': '10px',
+    }
 })
 
 export default function Web3ModalProvider({

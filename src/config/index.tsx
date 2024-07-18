@@ -1,6 +1,6 @@
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 
-import { cookieStorage, createStorage } from 'wagmi'
+import { cookieStorage, createStorage, http } from 'wagmi'
 import { holesky, mainnet, polygon, sepolia } from 'wagmi/chains'
 
 // Get projectId from https://cloud.walletconnect.com
@@ -19,9 +19,10 @@ const metadata = {
 const chains = [mainnet, sepolia, holesky, polygon] as const
 export const config = defaultWagmiConfig({
     chains,
-    // transports: {
-    //     [sepolia.id]: http()
-    // },
+    transports: {
+        [sepolia.id]: http(),
+        [mainnet.id]: http("https://eth-mainnet.g.alchemy.com/v2/wetra8HLzo_m-UswS8UJCnwdzS40X2wN")
+    },
     projectId,
     metadata,
     auth: {
