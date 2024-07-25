@@ -5,7 +5,6 @@ import { holesky, mainnet, polygon, sepolia } from 'wagmi/chains'
 
 // Get projectId from https://cloud.walletconnect.com
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
-
 if (!projectId) throw new Error('Project ID is not defined')
 
 const metadata = {
